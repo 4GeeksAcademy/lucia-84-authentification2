@@ -1,12 +1,23 @@
-//import react into the bundle
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Signup from './Signup';
+import Login from './Login';
+import Logout from './Logout';
 
-//include your index.scss file into the bundle
-import "../styles/index.css";
+function App() {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <Logout />
+        </nav>
+        <Switch>
+          <Route path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+        </Switch>
+      </div>
+    </Router>
+  );
+}
 
-//import your own components
-import Layout from "./layout";
-
-//render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+export default App;

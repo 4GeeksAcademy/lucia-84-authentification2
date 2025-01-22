@@ -1,5 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
+
+const handleLogout = () => {
+    sessionStorage.removeItem('token');
+    history.push('/login');
+  };
 
 export const Navbar = () => {
 	return (
@@ -9,11 +15,12 @@ export const Navbar = () => {
 					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
 				</Link>
 				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+					<Link to="/login">
+					<button onClick={handleLogout}>Logout</button>;
 					</Link>
 				</div>
 			</div>
 		</nav>
 	);
 };
+
