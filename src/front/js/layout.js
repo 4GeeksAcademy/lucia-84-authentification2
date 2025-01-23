@@ -1,15 +1,12 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
-import { BackendURL } from "./component/backendURL";
-
-import { Home } from "./pages/home";
-import { Signup } from "./pages/signup";
-import { Login } from "./pages/login";
+import { Demo } from "./pages/demo";
+import { Single } from "./pages/single";
+import Register from "./pages/Register.jsx"
+import Login from "./pages/Login.js";
 import injectContext from "./store/appContext";
-
+import Signup from "./pages/signup.js"
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import {Private} from "./pages/Private.js";
 
 //create your first component
 const Layout = () => {
@@ -26,7 +23,8 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        <Route element={<Signup />} path="/signup" />
+                        <Route element={<Register />} path="/register" />
+                        <Route element={<Signup />} path="/register" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Private />} path="/private" />
                     </Routes>
